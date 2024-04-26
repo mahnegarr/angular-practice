@@ -13,8 +13,13 @@
 <h1 [hidden]="username != ''">please enter your password</h1>
 
 <label>username</label>
-<input type="text" [inputMode]="onUsernameInputChanged($event)"  />
-<p>enter password</p>
-<input type="text" />
-<p>retype password</p>
-<input type="text" />
+<input type="text" (input)="onUsernameInputChanged($event)" />
+<br />
+<label>enter password</label>
+<input type="password" (input)="onPasswordInputChanged($event)" />
+<br />
+<label>retype password</label>
+<input type="password" (input)="onRetypePasswordInputChanged($event)" />
+<br />
+<label [hidden]="isPasswordsMatch || password === ''">the password doesn't match</label>
+<label [hidden]="!isPasswordsMatch">password match</label>
