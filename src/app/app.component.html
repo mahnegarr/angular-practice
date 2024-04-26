@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <ul>
     <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
     <li><a routerLinkActive="active" routerLink="/about">About</a></li>
@@ -7,4 +7,14 @@
 </nav>
 <div class="main-container">
   <router-outlet></router-outlet>
-</div>
+</div> -->
+
+<h1 [hidden]="username === ''">welcome {{ username }}</h1>
+<h1 [hidden]="username != ''">please enter your password</h1>
+
+<label>username</label>
+<input type="text" [inputMode]="onUsernameInputChanged($event)"  />
+<p>enter password</p>
+<input type="text" />
+<p>retype password</p>
+<input type="text" />

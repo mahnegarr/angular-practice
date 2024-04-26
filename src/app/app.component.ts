@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-test';
+  username : string = ""
+  public onUsernameInputChanged(e: Event){
+    this.username = (<HTMLInputElement> e.target).value
+   
+  }
+  
 }
